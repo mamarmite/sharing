@@ -1,0 +1,27 @@
+
+.sharing-buttons-container {
+    display:flex;
+    justify-content: center;
+}
+
+.sharing-buttons-container .sharing-box {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.sharing-buttons-container .sharing-box .sharing-buttons {
+    display:flex;
+    align-items: center;
+}
+.sharing-buttons-container .sharing-box .sharing-logs {
+    align-items: center;
+    font-size: .5em;
+}
+
+
+.sharing-buttons-container .sharing-box .sharing-buttons .btn-share {
+    padding: 0.8em 0.7em;
+}
