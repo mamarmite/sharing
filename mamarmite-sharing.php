@@ -29,6 +29,7 @@ $src_path = dirname(__FILE__)."/src/";
 
 $load_includes = [
     $src_path.'Config.php',
+    $src_path.'Settings.php',
     
     $src_path.'Data/Log.php',
     $src_path.'Traits/LoggerTrait.php',
