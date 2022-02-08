@@ -3,7 +3,7 @@ namespace Mamarmite\Sharing;
 /*
  *  Plugin Name: Outil de partage
  *  Plugin URI: https://mamarmite.com
- *  Version: 0.0.1
+ *  Version: 0.0.2
  *  Author: Marc-André Martin
  *  Author uri: https://mamarmite.com
  *  Description: Extensions pour ajouter des outils de partage sur le site

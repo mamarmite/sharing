@@ -5,21 +5,25 @@
             <?php
             if (isset(\Mamarmite\Sharing\Data\SocialsSharing::$sharing_networks)) {
                 foreach (\Mamarmite\Sharing\Data\SocialsSharing::$sharing_networks as $id => $network) {
-                    //$network->render();
-                    $network->setupData();
-                    ?>
-                    <a href="#"
-                       title="<?= __(" Partager sur", "mamarmite-sharing") . " " . $network->label; ?>"
-                       rel="nofollow"
-                       class="btn-share p-3"
-                       data-socialtext="<?= $network->sharingTitle ?>"
-                       data-media="<?= $network->slug ?>"
-                       data-title="<?= $network->sharingTitle ?>"
-                       data-thumb="<?= $network->sharingImage ?>"
-                       data-url="<?= \get_the_permalink() ?>">
-                        <i class="fa <?= $network->icon ?> share-network-<?= $network->slug ?> display-4"></i>
-                    </a>
+                    if (isset($network)) {
+                        $post_id = get_the_ID();
+                        $image = \get_the_post_thumbnail_url($post_id,'large');
+                        ?>
+                        <a href="#">
+                            <a href="#"
+                               title="<?= __(" Partager sur", "mamarmite-sharing") . " " . $network->label; ?>"
+                               rel="nofollow"
+                               class="btn-share p-3"
+                               data-socialtext=""
+                               data-media="<?= $network->slug ?>"
+                               data-title="<?= get_the_title() ?>"
+                               data-thumb="<?= $image ?>"
+                               data-url="<?= get_the_permalink() ?>">
+                                <i class="fa <?= $network->icon ?> share-network-<?= $network->slug ?> display-4"></i>
+                            </a>
+                        </a>
                     <?php
+                    }
                 }
             }
             ?>

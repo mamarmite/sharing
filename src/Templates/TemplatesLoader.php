@@ -215,13 +215,12 @@ class TemplateLoader
             // Remove empty entries.
             $template_names = array_filter( (array) $template_names );
             $template_paths = $this->get_template_paths();
-            
             // Try to find a template file.
             foreach ( $template_names as $template_name )
             {
                 // Trim off any slashes from the template name.
                 $template_name = ltrim( $template_name, '/' );
-                
+    
                 // Try locating this template file by looping through the template paths.
                 foreach ( $template_paths as $template_path ) {
                     if ( file_exists( $template_path . $template_name ) ) {
@@ -237,7 +236,7 @@ class TemplateLoader
         if ( $load && $located ) {
             load_template( $located, $require_once );
         }
-        
+    
         return $located;
     }
     

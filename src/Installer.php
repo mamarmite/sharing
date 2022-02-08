@@ -46,10 +46,10 @@ class Installer
     public function init()
     {
         \add_action('plugins_loaded', [$this, 'need_update']);
-        \add_action('admin_notices', [$this, 'flash_message']);
+        //\add_action('admin_notices', [$this, 'flash_message']);
         
         //add_action('admin_init', array($this, 'setup_sceens'));
-        add_action('', [$this, 'flash_message']);
+        //add_action('', [$this, 'flash_message']);
     }
     
     

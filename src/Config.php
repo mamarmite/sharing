@@ -30,7 +30,6 @@ class Config
         self::$PLUGIN_SETTING_PREFIX = self::PLUGIN_BASE_SLUG."-settings";
         self::init_env_vars();
         self::setup_data();
-        self::init_templates();
     }
     
     public static function init_env_vars() {
@@ -62,7 +61,14 @@ class Config
         return self::$PLUGIN_INDEX;
     }
     
-    public static function init_templates() {
-        self::$TEMPLATE_LOADER = new TemplateLoader();
+    /**
+     * Double singleton ? Too much ? Test performance to be shure.
+     * @return TemplateLoader
+     */
+    public static function template_loader() {
+        if (!isset(self::$TEMPLATE_LOADER)) {
+            self::$TEMPLATE_LOADER = TemplateLoader::get_instance();
+        }
+        return self::$TEMPLATE_LOADER;
     }
 }

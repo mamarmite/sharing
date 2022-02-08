@@ -19,16 +19,17 @@ function getSocialButtonsTemplate()
 
 function addSocialButtonsAfterContent($content)
 {
-    if (is_singular())// && in_the_loop() && is_main_query())
-    {
+    //if (is_singular())// && in_the_loop() && is_main_query())
+   // {
         ob_start();
-        Config::$TEMPLATE_LOADER->get_template_part('sharing', 'buttons');
+        //Config::$TEMPLATE_LOADER->get_template_part('sharing', 'buttons');
+        Config::template_loader()->get_template_part('sharing','buttons');
         $sharingButtons = ob_get_contents();
         ob_end_clean();
-        
+    
         return $content . $sharingButtons;
-    }
-    return $content;
+    //}
+    //return $content;
 }
 
 add_filter('the_content', __NAMESPACE__ . '\\addSocialButtonsAfterContent', 99);

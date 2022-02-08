@@ -59,7 +59,7 @@
         switch (params.media) {
             case 'facebook':
             case 'Facebook':
-                return 'https://www.facebook.com/sharer/sharer.php?u='+params.url;
+                return 'https://www.facebook.com/sharer/sharer.php?u=' + params.url + '&quote=' + params.title;
 
             case 'twitter':
             case 'Twitter':
